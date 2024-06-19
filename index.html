@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDC Efficiency Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>BDC Efficiency Calculator</h1>
+            <p>
+                Hello, my name is Alex Castro. Over the past 18 months, I have immersed myself in the Automotive BDC industry, starting as an agent and quickly recognizing the multitude of challenges posed by various CRMs within a BDC environment. Let's be honest, eLeads and VinSolutions are robust CRMs, but they are designed for single-screen use, typically suited for one BDC agent per dealership. However, the Automotive BDC is a thriving and lucrative business.
+            </p>
+            <p>
+                In today's BDC landscape, you'll often hear about the effectiveness of scripts and the prowess of agents on the phone. But behind the scenes, agents struggle with slow computers, juggling 10 to 20 different browser windows, and navigating multiple CRMs. Witnessing these inefficiencies firsthand, I felt compelled to make a change.
+            </p>
+            <p>
+                Drawing from my experience as an agent, I developed a series of tools aimed at alleviating the repetitive tasks that bog down BDC agents. These tools streamline CRM management, reduce human error, and significantly enhance agent efficiency. By automating mundane tasks, agents can focus on what they do best—connecting with clients and driving appointments.
+            </p>
+            <p>
+                This website showcases the potential time and money savings achievable through these automated processes. Explore the data, visualize the impact, and see how these innovations can transform your BDC operations.
+            </p>
+        </header>
+        <section class="input-section">
+            <div class="bdc-info">
+                <h2>BDC Info</h2>
+                <label for="agents">Amount of Agents:</label>
+                <select id="agents">
+                    <option value="">Select</option>
+                    <script>
+                        for (let i = 1; i <= 20; i++) {
+                            document.write(`<option value="${i}">${i}</option>`);
+                        }
+                    </script>
+                </select>
+
+                <label for="usd-per-hour">USD per hour for Agent <span id="monthly-pay"></span>:</label>
+                <input type="number" id="usd-per-hour">
+
+                <label for="shift-5-days">Agent Shift 5 Days a Week:</label>
+                <select id="shift-5-days">
+                    <option value="">Select</option>
+                    <option value="8">8 hours</option>
+                    <option value="12">12 hours</option>
+                </select>
+
+                <label for="shift-6-days">Agent Shift 6 Days a Week:</label>
+                <select id="shift-6-days">
+                    <option value="">Select</option>
+                    <option value="8">8 hours</option>
+                    <option value="12">12 hours</option>
+                </select>
+
+                <label for="min-dials">Minimum Amount of Dials:</label>
+                <input type="number" id="min-dials">
+
+                <label for="min-appointments">Minimum Amount of Appointments:</label>
+                <input type="number" id="min-appointments">
+            </div>
+            <div class="task-savings">
+                <h2>Repetitive Tasks Savings</h2>
+                <label>
+                    <input type="checkbox" id="click-to-call"> Click to Call (10 seconds per dial)
+                </label>
+                <label>
+                    <input type="checkbox" id="lead-opening"> Automating Lead Opening (30 seconds per 15 leads, up to 300 leads per 8-hour shift)
+                </label>
+                <label>
+                    <input type="checkbox" id="vehicle-search"> Vehicle, VIN, and Stock Number Search (30 seconds per search, up to 30 searches per day)
+                </label>
+                <label>
+                    <input type="checkbox" id="eleads-misc"> eLeads Misc Savings (up to 5 minutes per 8-hour shift)
+                </label>
+            </div>
+        </section>
+        <section class="visualization-section">
+            <h2>Data Visualization</h2>
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <div id="day-chart"></div>
+                </div>
+                <div class="chart-container">
+                    <div id="week-chart"></div>
+                </div>
+                <div class="chart-container">
+                    <div id="month-chart"></div>
+                </div>
+                <div class="chart-container">
+                    <div id="year-chart"></div>
+                </div>
+            </div>
+        </section>
+        <section class="combination-chart-section">
+            <h2>Yearly Data Visualization</h2>
+            <div class="chart-container">
+                <div id="combination-chart"></div>
+            </div>
+            <div class="summary" id="summary">
+                <!-- Summary will be updated here -->
+            </div>
+        </section>
+    </div>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
